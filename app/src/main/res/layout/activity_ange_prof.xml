@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AngeProfActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:background="#FF8BB4"
+            android:alpha="0.7"
+            android:paddingStart="180dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:paddingTop="90dp"/>
+
+        <TextView
+            android:id="@+id/artistName"
+            android:layout_width="184dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-205dp"
+            android:paddingTop="10dp"
+            android:text="Angeline Dela Cruz"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:src="@drawable/light"
+            android:background="@null"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="-335dp"/>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            app:cardCornerRadius="290dp"
+            android:layout_marginTop="70dp"
+            app:cardElevation="15dp"
+            android:layout_marginLeft="-20dp"
+            app:cardBackgroundColor="#FF8BB4">
+
+            <ImageView
+                android:id="@+id/angeline"
+                android:layout_width="150dp"
+                android:paddingTop="20dp"
+                android:src="@drawable/angeline"
+                android:layout_height="170dp"
+                android:layout_marginLeft="-16dp"
+                android:layout_marginTop="-20dp"
+                android:scaleType="centerCrop"
+                android:background="@null" />
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:src="@drawable/loc"
+            android:layout_marginTop="135dp"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="110dp"
+            android:layout_height="20dp"
+            android:text="Banilad Cebu City"
+            android:layout_marginTop="30dp"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/bag"
+            android:layout_marginTop="155dp"
+            android:layout_marginLeft="-132dp"/>
+
+        <TextView
+            android:id="@+id/workexper"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:text="3 years"
+            android:layout_marginTop="55dp"
+            />
+
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:src="@drawable/star"
+            android:layout_marginTop="185dp"
+            android:layout_marginLeft="-125dp"/>
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:src="@drawable/star"
+            android:layout_marginTop="185dp"
+            android:layout_marginLeft="2dp"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:src="@drawable/star"
+            android:layout_marginTop="185dp"
+            android:layout_marginLeft="2dp"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:src="@drawable/star"
+            android:layout_marginTop="185dp"
+            android:layout_marginLeft="2dp"/>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:src="@drawable/star"
+            android:layout_marginTop="185dp"
+            android:layout_marginLeft="2dp"/>
+
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:text="GALLERY PORTFOLIO"
+            android:layout_marginTop="165dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginLeft="-235dp"/>
+
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:layout_marginLeft="-375dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="330dp"
+            android:src="@drawable/ang1" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="330dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ang2"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="330dp"
+            android:layout_marginLeft="-5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ang3"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="510dp"
+            android:layout_marginLeft="-430dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ang4"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="510dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ang5"/>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="510dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ang6" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="690dp"
+            android:layout_marginLeft="-455dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ang7"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="690dp"
+            android:scaleType="centerCrop"
+            android:layout_marginLeft="-10dp"
+            android:src="@drawable/ang8"/>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="690dp"
+            android:layout_marginLeft="0dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ang9"/>
+    </LinearLayout>
+</ScrollView>

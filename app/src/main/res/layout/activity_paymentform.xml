@@ -1,0 +1,99 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".AppointmentActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/customer_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Customer Name"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/customer_name_input"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/customer_name_label"
+            android:layout_marginTop="8dp"
+            android:inputType="text"
+            android:background="@drawable/small_container"
+            android:padding="8dp"
+            android:drawablePadding="8dp"
+            android:imeOptions="actionNext"
+            android:layout_centerInParent="true"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/makeup_name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/customer_name_input"
+            android:layout_marginTop="16dp"
+            android:text="Makeup"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/makeup_name_input"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/makeup_name_label"
+            android:background="@drawable/small_container"
+            android:layout_marginTop="8dp"
+            android:inputType="text"
+            android:padding="8dp"
+            android:drawablePadding="8dp"
+            android:imeOptions="actionNext"
+            android:layout_centerInParent="true"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/appointment_time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/makeup_name_input"
+            android:layout_marginTop="16dp"
+            android:text="Appointment Time"
+            android:textSize="18sp" />
+
+        <TimePicker
+            android:id="@+id/appointment_time_picker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appointment_time_label"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/appointment_date_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appointment_time_picker"
+            android:layout_marginTop="16dp"
+            android:text="Appointment Date"
+            android:textSize="18sp" />
+
+        <CalendarView
+            android:id="@+id/appointment_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appointment_date_label"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appointment_calendar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:text="Submit"
+            android:backgroundTint="#FFBCD9"/>
+
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WalkInActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FF8FA2"
+        android:theme="?attr/actionBarTheme"
+        app:title="Salons"
+        android:paddingStart="70dp"
+        app:titleTextColor="@android:color/white"
+        android:layout_alignParentTop="true" />
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back"
+        android:layout_marginTop="20dp"
+        android:background="@null"/>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="165dp"
+        android:layout_height="240dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="100dp"
+        app:cardBackgroundColor="#FF8BB4"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="15dp"
+        android:clickable="true">
+
+        <ImageButton
+            android:id="@+id/salon1"
+            android:layout_width="160dp"
+            android:layout_height="245dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:backgroundTint="#FF8BB4"
+            android:scaleType="centerCrop"
+            android:src="@drawable/salon1" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="165dp"
+        android:layout_height="240dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="100dp"
+        app:cardBackgroundColor="#FF8BB4"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="15dp"
+        android:clickable="true">
+
+
+        <ImageButton
+            android:id="@+id/salon2"
+            android:layout_width="160dp"
+            android:layout_height="245dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:backgroundTint="#FF8BB4"
+            android:scaleType="centerCrop"
+            android:src="@drawable/salon2" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="165dp"
+        android:layout_height="240dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="380dp"
+        app:cardBackgroundColor="#FF8BB4"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="15dp"
+        android:clickable="true">
+
+
+        <ImageButton
+            android:id="@+id/salon3"
+            android:layout_width="160dp"
+            android:layout_height="245dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:backgroundTint="#FF8BB4"
+            android:scaleType="centerCrop"
+            android:src="@drawable/salon3" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="165dp"
+        android:layout_height="240dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="380dp"
+        app:cardBackgroundColor="#FF8BB4"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="15dp"
+        android:clickable="true">
+        <ImageButton
+            android:id="@+id/salon4"
+            android:layout_width="160dp"
+            android:layout_height="245dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:backgroundTint="#FF8BB4"
+            android:scaleType="centerCrop"
+            android:src="@drawable/salon4" />
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

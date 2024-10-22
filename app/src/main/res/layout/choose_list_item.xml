@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginBottom="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp">
+
+                <ImageView
+                    android:id="@+id/imageViewArtist1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/bretman"/>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/bretman"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bretman Rock"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/textViewLocation1"
+                    android:layout_width="134dp"
+                    android:layout_height="wrap_content"
+                    android:text="Cebu City"
+                    android:textColor="#777"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/buttonViewPortfolio1"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="View Portfolio"
+                    android:textSize="9sp"
+                    android:backgroundTint="#FFBCD9"/>
+
+                <Button
+                    android:id="@+id/buttonBook1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Book +"
+                    android:textSize="13sp"
+                    android:backgroundTint="#FFBCD9"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginBottom="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp">
+
+                <ImageView
+                    android:id="@+id/imageViewArtist2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/angeline"/>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/angeline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Angeline Dela Cruz"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/textViewLocation2"
+                    android:layout_width="134dp"
+                    android:layout_height="wrap_content"
+                    android:text="Banilad"
+                    android:textColor="#777"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/buttonViewPortfolio2"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="View Portfolio"
+                    android:textSize="9sp"
+                    android:backgroundTint="#FFBCD9"/>
+
+                <Button
+                    android:id="@+id/buttonBook2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:backgroundTint="#FFBCD9"
+                    android:text="Book +"
+                    android:textSize="13sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginBottom="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp">
+
+                <ImageView
+                    android:id="@+id/imageViewArtist3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/paul"/>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/paul"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Paul Unating"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/textViewLocation3"
+                    android:layout_width="134dp"
+                    android:layout_height="wrap_content"
+                    android:text="Danao"
+                    android:textColor="#777"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/buttonViewPortfolio3"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="View Portfolio"
+                    android:textSize="9sp"
+                    android:backgroundTint="#FFBCD9"/>
+
+                <Button
+                    android:id="@+id/buttonBook3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Book +"
+                    android:textSize="13sp"
+                    android:backgroundTint="#FFBCD9"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginBottom="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp">
+
+                <ImageView
+                    android:id="@+id/imageViewArtist4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/janica"/>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/janica"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Janica Cleto"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/textViewLocation4"
+                    android:layout_width="134dp"
+                    android:layout_height="wrap_content"
+                    android:text="Talisay"
+                    android:textColor="#777"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/buttonViewPortfolio4"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="View Portfolio"
+                    android:textSize="9sp"
+                    android:backgroundTint="#FFBCD9"/>
+
+                <Button
+                    android:id="@+id/buttonBook4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Book +"
+                    android:textSize="13sp"
+                    android:backgroundTint="#FFBCD9"/>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginBottom="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp">
+
+                <ImageView
+                    android:id="@+id/imageViewArtist5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/jelly"/>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/jelly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jelly Eugenio"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/textViewLocation5"
+                    android:layout_width="134dp"
+                    android:layout_height="wrap_content"
+                    android:text="Bogo City"
+                    android:textColor="#777"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/buttonViewPortfolio5"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="View Portfolio"
+                    android:textSize="9sp"
+                    android:backgroundTint="#FFBCD9"/>
+
+                <Button
+                    android:id="@+id/buttonBook5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Book +"
+                    android:textSize="13sp"
+                    android:backgroundTint="#FFBCD9"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:layout_marginBottom="8dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="16dp"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="8dp">
+
+                <ImageView
+                    android:id="@+id/imageViewArtist6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/anthea"/>
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/anthea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Anthea Bueno"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/textViewLocation6"
+                    android:layout_width="134dp"
+                    android:layout_height="wrap_content"
+                    android:text="Mandaue"
+                    android:textColor="#777"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/buttonViewPortfolio6"
+                    android:layout_width="120dp"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="View Portfolio"
+                    android:textSize="9sp"
+                    android:backgroundTint="#FFBCD9"/>
+
+                <Button
+                    android:id="@+id/buttonBook6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Book +"
+                    android:textSize="13sp"
+                    android:backgroundTint="#FFBCD9"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+
+

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".GcashDetailsActivity">
+
+        <RelativeLayout
+            android:id="@+id/pink_container"
+            android:layout_width="350dp"
+            android:layout_height="440dp"
+            android:background="@drawable/pink_background"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp">
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/dMerchant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Merchant"
+            android:textSize="15sp"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="50dp" />
+
+
+        <TextView
+            android:id="@+id/display_merchant"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/small_container"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="70dp"
+            android:layout_below="@+id/dMerchant"
+            android:maxLength="16"
+            android:padding="15dp"
+            android:drawablePadding="8dp"
+            android:imeOptions="actionNext" />
+
+        <TextView
+            android:id="@+id/dAmountDue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Amount Due"
+            android:textSize="15sp"
+            android:layout_below="@+id/display_merchant"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp" />
+
+
+        <TextView
+            android:id="@+id/display_amount_due"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/small_container"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="70dp"
+            android:layout_below="@+id/dAmountDue"
+            android:maxLength="16"
+            android:padding="15dp"
+            android:drawablePadding="8dp"
+            android:imeOptions="actionNext"/>
+
+        <TextView
+            android:id="@+id/dGcash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mobile Number"
+            android:textSize="15sp"
+            android:layout_below="@+id/display_amount_due"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp" />
+
+
+        <TextView
+            android:id="@+id/display_mobile_number"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/small_container"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="70dp"
+            android:layout_below="@+id/dGcash"
+            android:maxLength="16"
+            android:padding="15dp"
+            android:drawablePadding="8dp"
+            android:imeOptions="actionNext"/>
+
+
+
+        <Button
+            android:id="@+id/bookBtn2"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:backgroundTint="#FFBCD9"
+            android:layout_below="@+id/pink_container"
+            android:layout_marginTop="30dp"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+</ScrollView>

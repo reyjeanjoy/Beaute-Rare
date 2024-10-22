@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context=".LogInActivity">
+
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:src="@drawable/img1"
+            android:layout_marginTop="-30dp"
+            android:layout_marginStart="260dp"
+            />
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="190dp"
+            android:src="@drawable/img"
+            android:layout_marginTop="-200dp"
+            android:layout_marginStart="270dp"
+            />
+
+
+        <ImageView
+            android:layout_width="180dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/blogo"
+            android:layout_marginTop="-50dp"
+            />
+
+        <EditText
+            android:id="@+id/SEmail"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:hint="Email"
+            android:textSize="19dp"
+            android:paddingStart="15dp"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/design"
+            android:textColor="@color/black" />
+
+        <EditText
+            android:id="@+id/SPass"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:hint="Password"
+            android:textSize="19dp"
+            android:paddingStart="15dp"
+            android:inputType="textPassword"
+            android:background="@drawable/design"
+            android:maxLength="16"
+            android:textColor="@color/black" />
+
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="180dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/pink"
+            android:text="LOGIN"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:letterSpacing="0.5"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:focusable="true"
+            android:minHeight="48dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="8dp"
+            android:text="Don't have an account?" />
+
+        <TextView
+            android:id="@+id/SignUptextView"
+            android:layout_width="70dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="-2dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:minHeight="48dp"
+            android:text="Sign Up"
+            android:textAlignment="center"
+            android:textColor=" #FF0000" />
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="110dp"
+            android:src="@drawable/img"
+            android:layout_marginStart="-10dp"
+            android:layout_marginTop="-15dp"/>
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="110dp"
+            android:src="@drawable/img1"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="-110dp"/>
+
+    </LinearLayout>
+</ScrollView>

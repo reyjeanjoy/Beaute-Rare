@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "141370235598",
+    "project_id": "loginverification-b9cef",
+    "storage_bucket": "loginverification-b9cef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141370235598:android:e85211925bf2f1b45e0e9f",
+        "android_client_info": {
+          "package_name": "com.beauterare.rare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAssd4u-g_jNCSTn-jqBLDt33IgM5EaIMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

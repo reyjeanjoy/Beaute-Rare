@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".HomeSerPrice">
+
+        <RelativeLayout
+            android:id="@+id/pink_container"
+            android:layout_width="350dp"
+            android:layout_height="540dp"
+            android:background="@drawable/pink_background"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp">
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/paymentMethod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prices"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="68dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Prices"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            android:textColor="#F8B8C8"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="65dp"/>
+
+        <TextView
+            android:id="@+id/bridalprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bridal Makeup"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_below="@+id/paymentMethod"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/tradprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Traditional"
+            android:textSize="17sp"
+            android:layout_below="@+id/bridalprice"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/tradprice_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5000"
+            android:textSize="17sp"
+            android:layout_below="@+id/bridalprice"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/glamprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Glam "
+            android:textSize="17sp"
+            android:layout_below="@+id/tradprice"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"/>
+
+
+        <TextView
+            android:id="@+id/glamprice_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7000"
+            android:textSize="17sp"
+            android:layout_below="@+id/tradprice"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/naturalprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Natural"
+            android:textSize="17sp"
+            android:layout_below="@+id/glamprice"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"/>
+
+
+        <TextView
+            android:id="@+id/naturalprice_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4000"
+            android:textSize="17sp"
+            android:layout_below="@+id/glamprice"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="10dp"/>
+
+
+        <TextView
+            android:id="@+id/eventprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Makeup"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_below="@+id/naturalprice"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/eveningprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Evening"
+            android:textSize="17sp"
+            android:layout_below="@+id/eventprice"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"/>
+
+
+        <TextView
+            android:id="@+id/eveningprice_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3000"
+            android:textSize="17sp"
+            android:layout_below="@+id/eventprice"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/promprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Prom "
+            android:textSize="17sp"
+            android:layout_below="@+id/eveningprice"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"/>
+
+
+        <TextView
+            android:id="@+id/promprice_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2500"
+            android:textSize="17sp"
+            android:layout_below="@+id/eveningprice"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/specialprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Special"
+            android:textSize="17sp"
+            android:layout_below="@+id/promprice"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"/>
+
+
+        <TextView
+            android:id="@+id/specialprice_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6000"
+            android:textSize="17sp"
+            android:layout_below="@+id/promprice"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="10dp"/>
+
+
+        <TextView
+            android:id="@+id/fashionedpriec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fashion and Editorial Makeup"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_below="@+id/specialprice"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/runawayprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Runaway"
+            android:textSize="17sp"
+            android:layout_below="@+id/fashionedpriec"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"/>
+
+
+        <TextView
+            android:id="@+id/runawayprice_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8000"
+            android:textSize="17sp"
+            android:layout_below="@+id/fashionedpriec"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/photoshootprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Photoshoot "
+            android:textSize="17sp"
+            android:layout_below="@+id/runawayprice"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"/>
+
+
+        <TextView
+            android:id="@+id/photoshootprice_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4500"
+            android:textSize="17sp"
+            android:layout_below="@+id/runawayprice"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/edprice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Editorial Soot"
+            android:textSize="17sp"
+            android:layout_below="@+id/photoshootprice"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:id="@+id/edprice_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5500"
+            android:textSize="17sp"
+            android:layout_below="@+id/photoshootprice"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/nextbtn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pink_container"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:text="Next"
+            android:textStyle="bold"
+            android:backgroundTint="#FFBCD9" />
+
+    </RelativeLayout>
+</ScrollView>
+
+

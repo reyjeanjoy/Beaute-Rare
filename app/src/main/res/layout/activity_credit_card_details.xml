@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".CreditCardDetailsActivity">
+
+        <RelativeLayout
+            android:id="@+id/pink_container"
+            android:layout_width="350dp"
+            android:layout_height="570dp"
+            android:background="@drawable/pink_background"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp">
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/cardNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credit Card Number"
+            android:textSize="15sp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="50dp" />
+
+
+        <TextView
+            android:id="@+id/cardNumberValueTextView"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/small_container"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/cardNumberTextView"
+            android:layout_centerHorizontal="true"
+            android:maxLength="16"
+            android:padding="15dp"
+            android:drawablePadding="8dp"
+            android:imeOptions="actionNext"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/cardHolderNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Credit Card Holder's Name"
+            android:textSize="15sp"
+            android:layout_below="@+id/cardNumberValueTextView"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp" />
+
+
+        <TextView
+            android:id="@+id/cardHolderNameValueTextView"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/small_container"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/cardHolderNameTextView"
+            android:layout_centerHorizontal="true"
+            android:maxLength="16"
+            android:padding="15dp"
+            android:drawablePadding="8dp"
+            android:imeOptions="actionNext"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/expiryDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Expiry Date"
+            android:textSize="15sp"
+            android:layout_below="@+id/cardHolderNameValueTextView"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp" />
+
+
+        <TextView
+            android:id="@+id/expiryDateValueTextView"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/small_container"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="70dp"
+            android:layout_below="@+id/expiryDateTextView"
+            android:maxLength="16"
+            android:padding="15dp"
+            android:drawablePadding="8dp"
+            android:imeOptions="actionNext"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/cvvTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CVV"
+            android:textSize="15sp"
+            android:layout_below="@+id/expiryDateValueTextView"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp" />
+
+
+        <TextView
+            android:id="@+id/cvvValueTextView"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/small_container"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="70dp"
+            android:layout_below="@+id/cvvTextView"
+            android:maxLength="16"
+            android:padding="15dp"
+            android:drawablePadding="8dp"
+            android:imeOptions="actionNext"
+            android:maxLines="1"
+            android:ellipsize="end"/>
+
+        <TextView
+            android:id="@+id/cTotalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Amount"
+            android:textSize="15sp"
+            android:layout_below="@+id/cvvValueTextView"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="50dp" />
+
+
+        <TextView
+            android:id="@+id/ctotalAmountValueTextView"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/small_container"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="70dp"
+            android:layout_below="@+id/cTotalAmount"
+            android:inputType="text"
+            android:maxLength="16"
+            android:padding="15dp"
+            android:drawablePadding="8dp"
+            android:imeOptions="actionNext"/>
+
+        <Button
+            android:id="@+id/bookBtn1"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:backgroundTint="#FFBCD9"
+            android:layout_below="@+id/pink_container"
+            android:layout_marginTop="30dp"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+</ScrollView>

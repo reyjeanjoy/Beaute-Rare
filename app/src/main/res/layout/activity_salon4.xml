@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Salon4Activity">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/img1"
+        android:layout_marginTop="30dp"/>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/img"
+        android:layout_marginTop="50dp"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/img1"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="320dp"/>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/img"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="250dp"/>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/img1"
+        android:layout_marginTop="390dp"/>
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/img"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="570dp"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/img1"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="550dp"/>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#FF8FA2"
+        android:theme="?attr/actionBarTheme"
+        app:title="Walk In"
+        app:titleTextColor="@android:color/white"
+        android:paddingStart="70dp"
+        android:layout_alignParentTop="true" />
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back"
+        android:layout_marginTop="20dp"
+        android:background="@null"/>
+
+
+
+    <TextView
+        android:id="@+id/eventTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bridal Makeup"
+        android:textSize="24sp"
+        android:paddingStart="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="75dp"/>
+
+    ]   <LinearLayout
+    android:id="@+id/picsb"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="105dp"
+    android:layout_marginBottom="16dp">
+
+    <ImageView
+        android:id="@+id/picture1b"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/hs1"
+        android:clickable="true"
+        android:onClick="onPicture1Click"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/picture2b"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/hs2"
+        android:clickable="true"
+        android:onClick="onPicture2Click"/>
+
+    <ImageView
+        android:id="@+id/picture3b"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:onClick="onPicture3Click"
+        android:src="@drawable/hs3"
+        tools:ignore="SpeakableTextPresentCheck" />
+</LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/clickablePictures"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="110dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/picture1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="onPicture1Click"
+            android:src="@drawable/hs1"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:id="@+id/picture2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/hs2"
+            android:clickable="true"
+            android:onClick="onPicture2Click"/>
+
+        <ImageView
+            android:id="@+id/picture3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/hs3"
+            android:clickable="true"
+            android:onClick="onPicture3Click"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="75dp"
+        android:layout_height="20dp"
+        android:text="Traditional"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="32dp"
+        android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="45dp"
+        android:layout_height="20dp"
+        android:text="Glam"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="160dp"
+        android:textColor="@color/black"/>
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:text="Natural"
+        android:layout_marginTop="220dp"
+        android:layout_marginLeft="280dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="45dp"
+        android:layout_height="20dp"
+        android:text="Prom"
+        android:layout_marginTop="412dp"
+        android:layout_marginLeft="170dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="20dp"
+        android:text="Evening"
+        android:layout_marginTop="412dp"
+        android:layout_marginLeft="37dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="55dp"
+        android:layout_height="20dp"
+        android:text="Special"
+        android:layout_marginTop="412dp"
+        android:layout_marginLeft="285dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="55dp"
+        android:layout_height="20dp"
+        android:text="Runway"
+        android:layout_marginTop="593dp"
+        android:layout_marginLeft="40dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:text="Photoshoot"
+        android:layout_marginTop="593dp"
+        android:layout_marginLeft="148dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:text="Editorial Shoot"
+        android:textSize="12sp"
+        android:layout_marginTop="593dp"
+        android:layout_marginLeft="270dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/eventTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Event Makeup"
+        android:textSize="24sp"
+        android:paddingStart="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="260dp"/>
+
+    <LinearLayout
+        android:id="@+id/picsb2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="295dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/picture1b2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="onPicture1Click"
+            android:src="@drawable/hs4"
+            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:id="@+id/picture2b2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/hs5"
+            android:clickable="true"
+            android:onClick="onPicture2Click"/>
+
+        <ImageView
+            android:id="@+id/picture3b2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/hs6"
+            android:clickable="true"
+            android:onClick="onPicture3Click"
+            android:contentDescription="TODO" />
+    </LinearLayout>
+
+    <!-- Clickable Pictures -->
+    <LinearLayout
+        android:id="@+id/clickablePictures2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="300dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/picture12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/hs4"
+            android:clickable="true"
+            android:onClick="onPicture1Click"/>
+
+        <ImageView
+            android:id="@+id/picture22"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/hs5"
+            android:clickable="true"
+            android:onClick="onPicture2Click"/>
+
+        <ImageView
+            android:id="@+id/picture32"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/hs6"
+            android:clickable="true"
+            android:onClick="onPicture3Click"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/eventTitle3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fashion And Editorial Makeup"
+        android:paddingStart="15dp"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="440dp"/>
+
+    <LinearLayout
+        android:id="@+id/picsb3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="475dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/picture1b3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/hs7"
+            android:clickable="true"
+            android:onClick="onPicture1Click"/>
+
+        <ImageView
+            android:id="@+id/picture2b3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/hs8"
+            android:clickable="true"
+            android:onClick="onPicture2Click"/>
+
+        <ImageView
+            android:id="@+id/picture3b3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/hs9"
+            android:clickable="true"
+            android:onClick="onPicture3Click"/>
+    </LinearLayout>
+
+    <!-- Clickable Pictures -->
+    <LinearLayout
+        android:id="@+id/clickablePictures3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="480dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:id="@+id/picture13"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/hs7"
+            android:clickable="true"
+            android:onClick="onPicture1Click"/>
+
+        <ImageView
+            android:id="@+id/picture23"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/hs8"
+            android:clickable="true"
+            android:onClick="onPicture2Click"/>
+
+        <ImageView
+            android:id="@+id/picture33"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="onPicture3Click"
+            android:src="@drawable/hs9"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </LinearLayout>
+
+
+</RelativeLayout>

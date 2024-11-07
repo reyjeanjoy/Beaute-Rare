@@ -15,7 +15,7 @@ class ConfirmationActivity : AppCompatActivity() {
 
         val checkButton = findViewById<Button>(R.id.checkbutton)
         checkButton?.setOnClickListener {
-            val intent = Intent(this, DisplayAppointmentActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

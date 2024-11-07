@@ -85,7 +85,9 @@
             android:drawablePadding="8dp"
             android:layout_marginTop="-100dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp" />
+            android:layout_marginRight="25dp"
+            android:singleLine="true"
+            android:imeOptions="actionNext" />
 
         <EditText
             android:id="@+id/LastName"
@@ -101,7 +103,9 @@
             android:layout_marginTop="35dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:paddingStart="15dp"/>
+            android:paddingStart="15dp"
+            android:singleLine="true"
+            android:imeOptions="actionNext" />
 
 
         <EditText
@@ -117,7 +121,10 @@
             android:layout_marginTop="35dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:paddingStart="15dp"></EditText>
+            android:paddingStart="15dp"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
+
         <ImageView
             android:layout_width="150dp"
             android:layout_height="200dp"
@@ -145,8 +152,9 @@
             android:layout_marginTop="-125dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:paddingStart="15dp"></EditText>
-
+            android:paddingStart="15dp"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
 
         <EditText
             android:id="@+id/Password"
@@ -163,7 +171,9 @@
             android:padding="8dp"
             android:drawablePadding="8dp"
             android:layout_marginRight="25dp"
-            android:paddingStart="15dp"></EditText>
+            android:paddingStart="15dp"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
 
         <EditText
             android:id="@+id/ConfirmPassword"
@@ -180,7 +190,9 @@
             android:padding="8dp"
             android:drawablePadding="8dp"
             android:layout_marginRight="25dp"
-            android:paddingStart="15dp"></EditText>
+            android:paddingStart="15dp"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
 
         <Button
             android:id="@+id/SignUpButton"

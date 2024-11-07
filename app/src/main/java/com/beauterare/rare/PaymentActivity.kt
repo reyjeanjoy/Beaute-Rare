@@ -12,21 +12,11 @@ class PaymentActivity : AppCompatActivity() {
         setContentView(R.layout.activity_payment)
 
         val creditCardTextView = findViewById<TextView>(R.id.creditCardTextView)
-        val paypalTextView = findViewById<TextView>(R.id.paypalTextView)
-        val gcashTextView = findViewById<TextView>(R.id.gcashTextView)
         val cashTextView = findViewById<TextView>(R.id.cashTextView)
 
 
         creditCardTextView.setOnClickListener {
             navigateToCreditCardScreen()
-        }
-
-        paypalTextView.setOnClickListener {
-            navigateToPayPalScreen()
-        }
-
-        gcashTextView.setOnClickListener {
-            navigateToGCashScreen()
         }
 
         cashTextView.setOnClickListener {
@@ -37,16 +27,6 @@ class PaymentActivity : AppCompatActivity() {
 
     private fun navigateToCreditCardScreen() {
         val intent = Intent(this, CreditCardActivity::class.java)
-        startActivity(intent)
-    }
-
-    private fun navigateToPayPalScreen() {
-        val intent = Intent(this, PayPalActivity::class.java)
-        startActivity(intent)
-    }
-
-    private fun navigateToGCashScreen() {
-        val intent = Intent(this, GCashActivity::class.java)
         startActivity(intent)
     }
 

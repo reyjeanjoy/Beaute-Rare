@@ -13,10 +13,10 @@
         <RelativeLayout
             android:id="@+id/pink_container"
             android:layout_width="350dp"
-            android:layout_height="490dp"
+            android:layout_height="400dp"
             android:background="@drawable/pink_background"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="70dp">
+            android:layout_marginTop="110dp">
         </RelativeLayout>
 
 
@@ -29,7 +29,7 @@
             android:textStyle="bold"
             android:textColor="#FFFFFF"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="110dp"/>
+            android:layout_marginTop="145dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
             android:textStyle="bold"
             android:textColor="#F8B8C8"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="105dp"/>
+            android:layout_marginTop="140dp"/>
 
         <TextView
             android:id="@+id/creditCardTextView"
@@ -54,30 +54,6 @@
             android:layout_centerHorizontal="true"/>
 
         <TextView
-            android:id="@+id/paypalTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/small_container"
-            android:gravity="center"
-            android:text="Pay Pal"
-            android:textSize="15sp"
-            android:layout_marginTop="40dp"
-            android:layout_below="@+id/creditCardTextView"
-            android:layout_centerHorizontal="true"/>
-
-        <TextView
-            android:id="@+id/gcashTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/small_container"
-            android:gravity="center"
-            android:text="GCash"
-            android:textSize="15sp"
-            android:layout_marginTop="40dp"
-            android:layout_below="@+id/paypalTextView"
-            android:layout_centerHorizontal="true"/>
-
-        <TextView
             android:id="@+id/cashTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -86,7 +62,7 @@
             android:text="Cash"
             android:textSize="15sp"
             android:layout_marginTop="40dp"
-            android:layout_below="@+id/gcashTextView"
+            android:layout_below="@+id/creditCardTextView"
             android:layout_centerHorizontal="true"/>
 
 

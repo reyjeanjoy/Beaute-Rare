@@ -25,7 +25,7 @@ class CreditCardDetailsActivity : AppCompatActivity() {
 
         val bookButton = findViewById<Button>(R.id.bookBtn1)
         bookButton.setOnClickListener {
-            val intent = Intent(this, FormActivity::class.java)
+            val intent = Intent(this, ConfirmationActivity::class.java)
             startActivity(intent)
         }
     }

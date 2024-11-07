@@ -11,7 +11,7 @@ class CashActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_cash)
 
-        val intent = Intent(this, FormActivity::class.java)
+        val intent = Intent(this, ConfirmationActivity::class.java)
         startActivity(intent)
         finish()
     }

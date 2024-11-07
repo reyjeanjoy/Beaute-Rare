@@ -20,34 +20,33 @@ class EMainScreenWalkin : AppCompatActivity() {
         val bookButton6 = findViewById<Button>(R.id.buttonBook16)
         val bookButton7 = findViewById<Button>(R.id.buttonBook17)
 
-        bookButton1.setOnClickListener{
-            val intent = Intent(this,PaymentActivity::class.java)
-            startActivity(intent)
+        bookButton1.setOnClickListener {
+            openFormActivity("Glittery Makeup")
         }
-        bookButton2.setOnClickListener{
-            val intent = Intent(this,PaymentActivity::class.java)
-            startActivity(intent)
+        bookButton2.setOnClickListener {
+            openFormActivity("Classic Makeup")
         }
-        bookButton3.setOnClickListener{
-            val intent = Intent(this,PaymentActivity::class.java)
-            startActivity(intent)
+        bookButton3.setOnClickListener {
+            openFormActivity("Soft Glam Makeup")
         }
-        bookButton4.setOnClickListener{
-            val intent = Intent(this,PaymentActivity::class.java)
-            startActivity(intent)
+        bookButton4.setOnClickListener {
+            openFormActivity("Cut Crease Makeup")
         }
-        bookButton5.setOnClickListener{
-            val intent = Intent(this,PaymentActivity::class.java)
-            startActivity(intent)
+        bookButton5.setOnClickListener {
+            openFormActivity("Sultry Makeup")
         }
-        bookButton6.setOnClickListener{
-            val intent = Intent(this,PaymentActivity::class.java)
-            startActivity(intent)
+        bookButton6.setOnClickListener {
+            openFormActivity("Smokey Makeup")
         }
-        bookButton7.setOnClickListener{
-            val intent = Intent(this,PaymentActivity::class.java)
-            startActivity(intent)
+        bookButton7.setOnClickListener {
+            openFormActivity("Simple Makeup")
         }
+    }
 
+    private fun openFormActivity(makeupName: String) {
+        val intent = Intent(this, FormActivity::class.java).apply {
+            putExtra("makeupName", makeupName)
+        }
+        startActivity(intent)
     }
 }

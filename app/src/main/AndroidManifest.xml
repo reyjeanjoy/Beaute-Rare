@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Rare"
         tools:targetApi="31">
         <activity
+            android:name=".BookDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".HomeSerPrice"
             android:exported="false" />
         <activity

@@ -60,5 +60,10 @@ dependencies {
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
     implementation (platform("com.google.firebase:firebase-bom:33.0.0"))
     implementation ("com.google.firebase:firebase-storage:20.0.0")
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation ("com.squareup.okhttp3:logging-interceptor:4.10.0")
+
+
 
 }

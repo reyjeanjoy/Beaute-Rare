@@ -1,9 +1,9 @@
 ## JM.RAR
-- [Franz Ruie Morada](https://github.com/username1)
-- [Alvin John Araneta](https://github.com/username2)
-- [Edz Henissey Son](https://github.com/username3)
-- [Jay-r Olores](https://github.com/username4)
-- [Kenneth James Macas](https://github.com/username5)
+- [Reyjean Joy Lumapac](https://github.com/reyjeanjoy)
+- [Adelyne Eve Gipgano](https://github.com/username2)
+- [Rhytz Archival](https://github.com/LRhytz)
+- [Joseph Manuel Bagcat](https://github.com/Jospehus22)
+- [Matthew Daniel Pareja](https://github.com/MattHyo2002)
 
 # Project Documentation
 

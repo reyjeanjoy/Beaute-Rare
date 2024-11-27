@@ -1,4 +1,7 @@
-## JM.RAR
+## Beauté Rare
+Beauté Rare is an innovative mobile makeup booking app designed to transform the way makeup services are accessed and booked. This platform serves as a connection between customers looking for expert beauty services and qualified makeup artists. Beauté Rare aims to improve the overall makeup booking experience in order to establish itself as the go-to platform for makeup artists and enthusiasts, transforming the beauty services sector one appointment at a time.
+
+## ELDROID MEMBERS (JM.RAR)
 - [Reyjean Joy Lumapac](https://github.com/reyjeanjoy)
 - [Adelyne Eve Gipgano](https://github.com/Adelyneeve1?fbclid=IwZXh0bgNhZW0CMTEAAR0LOo4sK09KXo0bcllc9hoVOjE83zHR-dflVGMxBDbqwPHTmwFuTRCH1eM_aem_AEkymb8QF8CJb-Jw4WmsUA)
 - [Rhytz Archival](https://github.com/LRhytz)

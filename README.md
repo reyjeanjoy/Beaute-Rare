@@ -1,3 +1,12 @@
+## JM.RAR
+( •Reyjean Joy Lumapac)
+( •Adelyne Eve Gipgano)
+( •Rhytz Archival)
+( •Joseph Manuel Bagcat)
+( •Matthew Daniel Pareja)
+
+
+
 # Project Documentation
 
 ## Testcases Documentation

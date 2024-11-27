@@ -1,96 +1,73 @@
 package com.beauterare.rare
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.tasks.OnSuccessListener
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
-
+import com.beauterare.rare.models.SignUpRequest
+import com.beauterare.rare.models.SignUpResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SignUpActivity : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
     private lateinit var signupEmail: EditText
     private lateinit var signupPassword: EditText
+    private lateinit var signupFname: EditText
+    private lateinit var signupLname: EditText
+    private lateinit var signupAddress: EditText
     private lateinit var signUpButton: Button
     private lateinit var loginTextView: TextView
-    private lateinit var signupFname:EditText
-    private lateinit var signupLname:EditText
-    private lateinit var signupaddress:EditText
-    private lateinit var fStore:FirebaseFirestore
-    private lateinit var userID:TextView
-
+    private lateinit var databaseHelper: DatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_sign_up)
 
-        auth = FirebaseAuth.getInstance()
-        fStore = FirebaseFirestore.getInstance()
         signupEmail = findViewById(R.id.Email)
         signupPassword = findViewById(R.id.Password)
-        signUpButton = findViewById(R.id.SignUpButton)
-        loginTextView = findViewById(R.id.LoginTextView)
         signupFname = findViewById(R.id.FirstName)
         signupLname = findViewById(R.id.LastName)
-        signupaddress = findViewById(R.id.Address)
+        signupAddress = findViewById(R.id.Address)
+        signUpButton = findViewById(R.id.SignUpButton)
+        loginTextView = findViewById(R.id.LoginTextView)
+
+        databaseHelper = DatabaseHelper(this)
 
         signUpButton.setOnClickListener {
-            val user = signupEmail.text.toString().trim()
-            val pass = signupPassword.text.toString().trim()
+            val email = signupEmail.text.toString().trim()
+            val password = signupPassword.text.toString().trim()
             val fname = signupFname.text.toString().trim()
             val lname = signupLname.text.toString().trim()
-            val address = signupaddress.text.toString().trim()
+            val address = signupAddress.text.toString().trim()
 
-            if (user.isEmpty()) {
-                signupEmail.error = "Email cannot be empty"
-                return@setOnClickListener
-            }
-            if (pass.isEmpty()) {
-                signupPassword.error = "Password cannot be empty"
+            // Validate input
+            if (email.isEmpty() || password.isEmpty() || fname.isEmpty() || lname.isEmpty() || address.isEmpty()) {
+                Toast.makeText(this, "All fields are required", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            auth.createUserWithEmailAndPassword(user, pass).addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(this@SignUpActivity, "SignUp Successful", Toast.LENGTH_SHORT).show();
-                    val userID = auth.currentUser?.uid
-                    val documentReference = fStore.collection("users").document(userID!!)
-                    val user = hashMapOf(
-                        "fname" to fname,
-                        "lname" to lname,
-                        "email" to user,
-                        "pass" to pass,
-                        "address" to address
-                    )
-                    documentReference.set(user).addOnSuccessListener {
-                        Log.d(TAG, "onSuccess: User Profile is created for $userID")
-                    }.addOnFailureListener { e ->
-                        Log.w(TAG, "Error adding document", e)
-                    }
+            // Check if email already exists
+            if (databaseHelper.isEmailExists(email)) {
+                Toast.makeText(this, "Email already exists. Please use a different email.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
-
-                    startActivity(Intent(this@SignUpActivity, LogInActivity::class.java))
-                }
-                else {
-                    Toast.makeText(
-                        this@SignUpActivity,
-                        "SignUp Failed" + task.exception?.message,
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
+            // Insert into SQLite after PHP validation
+            val isInserted = databaseHelper.insertUser(email, password, "$fname $lname", address)
+            if (isInserted) {
+                Toast.makeText(this, "SignUp Successful!", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, LogInActivity::class.java))
+                finish()
+            } else {
+                Toast.makeText(this, "Error saving data locally.", Toast.LENGTH_SHORT).show()
             }
         }
+
 
         loginTextView.setOnClickListener {
             startActivity(Intent(this@SignUpActivity, LogInActivity::class.java))

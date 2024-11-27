@@ -1,6 +1,6 @@
 ## JM.RAR
 - [Reyjean Joy Lumapac](https://github.com/reyjeanjoy)
-- [Adelyne Eve Gipgano](https://github.com/username2)
+- [Adelyne Eve Gipgano](https://github.com/Adelyneeve1?fbclid=IwZXh0bgNhZW0CMTEAAR0LOo4sK09KXo0bcllc9hoVOjE83zHR-dflVGMxBDbqwPHTmwFuTRCH1eM_aem_AEkymb8QF8CJb-Jw4WmsUA)
 - [Rhytz Archival](https://github.com/LRhytz)
 - [Joseph Manuel Bagcat](https://github.com/Jospehus22)
 - [Matthew Daniel Pareja](https://github.com/MattHyo2002)

@@ -51,23 +51,38 @@ class SignUpActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Check if email already exists
+            // Check if email already exists in SQLite
             if (databaseHelper.isEmailExists(email)) {
                 Toast.makeText(this, "Email already exists. Please use a different email.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Insert into SQLite after PHP validation
-            val isInserted = databaseHelper.insertUser(email, password, "$fname $lname", address)
-            if (isInserted) {
-                Toast.makeText(this, "SignUp Successful!", Toast.LENGTH_SHORT).show()
-                startActivity(Intent(this, LogInActivity::class.java))
-                finish()
-            } else {
-                Toast.makeText(this, "Error saving data locally.", Toast.LENGTH_SHORT).show()
-            }
-        }
+            // Prepare data for API request
+            val signUpRequest = SignUpRequest(fname, lname, email, password, address)
 
+            // Call the backend API
+            RetrofitInstance.apiService.signUp(signUpRequest).enqueue(object : Callback<SignUpResponse> {
+                override fun onResponse(call: Call<SignUpResponse>, response: Response<SignUpResponse>) {
+                    if (response.isSuccessful && response.body()?.success == true) {
+                        // Insert into SQLite after successful backend validation
+                        val isInserted = databaseHelper.insertUser(email, password, "$fname $lname", address)
+                        if (isInserted) {
+                            Toast.makeText(this@SignUpActivity, "SignUp Successful!", Toast.LENGTH_SHORT).show()
+                            startActivity(Intent(this@SignUpActivity, LogInActivity::class.java))
+                            finish()
+                        } else {
+                            Toast.makeText(this@SignUpActivity, "Error saving data locally.", Toast.LENGTH_SHORT).show()
+                        }
+                    } else {
+                        Toast.makeText(this@SignUpActivity, response.body()?.message ?: "Signup Failed", Toast.LENGTH_SHORT).show()
+                    }
+                }
+
+                override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
+                    Toast.makeText(this@SignUpActivity, "Network Error: ${t.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
 
         loginTextView.setOnClickListener {
             startActivity(Intent(this@SignUpActivity, LogInActivity::class.java))

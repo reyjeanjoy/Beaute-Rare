@@ -24,5 +24,5 @@ Beauté Rare is an innovative mobile makeup booking app designed to transform th
 ![Retrofit](https://img.shields.io/badge/Retrofit-green?logo=retrofit&logoColor=white)
 
 ## Databases
-![MySQL](https://img.shields.io/badge/MySQL-blue?logo=mysql&logoColor=white)
+![SQLite](https://img.shields.io/badge/MySQL-blue?logo=mysql&logoColor=white)
 

@@ -2,13 +2,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".AppointmentActivity">
+    tools:context=".FormActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+        <!-- Customer Name -->
         <TextView
             android:id="@+id/customer_name_label"
             android:layout_width="wrap_content"
@@ -30,13 +31,14 @@
             android:layout_centerInParent="true"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
+        <!-- Makeup Name -->
         <TextView
             android:id="@+id/makeup_name_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/customer_name_input"
             android:layout_marginTop="16dp"
-            android:text="Makeup"
+            android:text="Makeup Name"
             android:textSize="18sp" />
 
         <EditText
@@ -53,12 +55,38 @@
             android:layout_centerInParent="true"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
+        <!-- Makeup Artist (Uneditable) -->
+        <TextView
+            android:id="@+id/makeup_artist_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/makeup_name_input"
+            android:layout_marginTop="16dp"
+            android:text="Makeup Artist"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/makeup_artist_input"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/makeup_artist_label"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:background="@drawable/small_container"
+            android:padding="8dp"
+            android:drawablePadding="8dp"
+            android:clickable="false"
+            android:focusable="false"
+            android:layout_centerInParent="true"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+        <!-- Appointment Time -->
         <TextView
             android:id="@+id/appointment_time_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/makeup_name_input"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="100dp"
             android:text="Appointment Time"
             android:textSize="18sp" />
 
@@ -69,6 +97,7 @@
             android:layout_below="@id/appointment_time_label"
             android:layout_marginTop="8dp" />
 
+        <!-- Appointment Date -->
         <TextView
             android:id="@+id/appointment_date_label"
             android:layout_width="wrap_content"
@@ -85,6 +114,7 @@
             android:layout_below="@id/appointment_date_label"
             android:layout_marginTop="8dp" />
 
+        <!-- Submit Button -->
         <Button
             android:id="@+id/submit_button"
             android:layout_width="wrap_content"

@@ -34,7 +34,7 @@ class ChooseArtistAdapter(
         }
 
         holder.buttonBook.setOnClickListener {
-            context.startActivity(Intent(context, PaymentActivity::class.java))
+            context.startActivity(Intent(context, FormActivity::class.java))
         }
 
         return view

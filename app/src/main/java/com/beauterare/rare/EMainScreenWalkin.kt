@@ -44,7 +44,7 @@ class EMainScreenWalkin : AppCompatActivity() {
     }
 
     private fun openFormActivity(makeupName: String) {
-        val intent = Intent(this, FormActivity::class.java).apply {
+        val intent = Intent(this, ChooseArtistActivity::class.java).apply {
             putExtra("makeupName", makeupName)
         }
         startActivity(intent)

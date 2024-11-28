@@ -69,7 +69,7 @@ class HomeFragment : Fragment() {
             }
         })
 
-        // Set up `clickbtn` button listener
+        // Set up clickbtn button listener
         view.findViewById<TextView>(R.id.clickbtn).setOnClickListener {
             clickbtnClick(it)
         }
@@ -169,7 +169,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun clickbtnClick(view: View) {
-        val intent = Intent(requireActivity(), HomeSerActivity::class.java) // Update with desired activity
+        val intent = Intent(requireActivity(), ChooseArtistActivity::class.java) // Update with desired activity
         startActivity(intent)
     }
 

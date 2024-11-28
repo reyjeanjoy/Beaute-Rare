@@ -1,6 +1,5 @@
 package com.beauterare.rare
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -22,70 +21,41 @@ import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Timer
 import java.util.TimerTask
 
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
 
-    private var param1: String? = null
-    private var param2: String? = null
-
     private val db = FirebaseFirestore.getInstance()
 
     private lateinit var viewPager: ViewPager
+    private lateinit var viewPager2: ViewPager
     private lateinit var timer: Timer
     private val DELAY_MS: Long = 1500
     private val PERIOD_MS: Long = 2000
     private var currentPage = 0
+    private var currentPage2 = 0
     private val handler = Handler(Looper.getMainLooper())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
 
+        // Initialize ViewPager for the first set of images
         viewPager = view.findViewById(R.id.viewPager)
+        setupViewPager(viewPager, listOf(R.drawable.image1, R.drawable.image2, R.drawable.image3), isFirstPager = true)
 
-        val imageList = listOf(
-            R.drawable.image1,
-            R.drawable.image2,
-            R.drawable.image3
-        )
+        // Initialize ViewPager2 for the second set of images
+        viewPager2 = view.findViewById(R.id.viewPager2)
+        setupViewPager(viewPager2, listOf(R.drawable.m1, R.drawable.m2, R.drawable.m3, R.drawable.m4, R.drawable.m5,R.drawable.m6), isFirstPager = false)
 
-        val adapter = ImagePagerAdapter(imageList, requireContext())
-        viewPager.adapter = adapter
-
-        // Implement automatic sliding
-        val update = Runnable {
-            if (currentPage == adapter.count - 1) {
-                currentPage = 0
-            }
-            viewPager.setCurrentItem(currentPage++, true)
-        }
-
-        timer = Timer() // This will create a new Thread
-        timer.scheduleAtFixedRate(
-            object : TimerTask() {
-                override fun run() {
-                    handler.post(update)
-                }
-            },
-            DELAY_MS,
-            PERIOD_MS
-        )
-
+        // Search bar listener
         binding.searchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(name: String?): Boolean {
                 if (!name.isNullOrEmpty()) {
@@ -95,32 +65,50 @@ class HomeFragment : Fragment() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                // Handle text changes if needed
                 return false
             }
         })
 
-        // Set up button click listeners
-        view.findViewById<ImageButton>(R.id.walkinbimg).setOnClickListener {
-            walkinbimgClick(it)
+        // Set up `clickbtn` button listener
+        view.findViewById<TextView>(R.id.clickbtn).setOnClickListener {
+            clickbtnClick(it)
         }
 
-        view.findViewById<ImageButton>(R.id.homebimg).setOnClickListener {
-            homebimgClick(it)
-        }
-
+        // Appointment list button listener
         view.findViewById<ImageButton>(R.id.appointmentList).setOnClickListener {
             appointmentListClick(it)
         }
 
         return view
     }
-    // Extension function to convert dp to pixels
-    fun Int.dpToPx(context: Context): Int {
-        val density = context.resources.displayMetrics.density
-        return (this * density).toInt()
-    }
 
+    private fun setupViewPager(viewPager: ViewPager, imageList: List<Int>, isFirstPager: Boolean) {
+        val adapter = ImagePagerAdapter(imageList, requireContext())
+        viewPager.adapter = adapter
+
+        val update = Runnable {
+            val currentPageRef = if (isFirstPager) currentPage else currentPage2
+            val nextPage = if (currentPageRef == adapter.count - 1) 0 else currentPageRef + 1
+
+            if (isFirstPager) {
+                currentPage = nextPage
+            } else {
+                currentPage2 = nextPage
+            }
+            viewPager.setCurrentItem(nextPage, true)
+        }
+
+        timer = Timer()
+        timer.scheduleAtFixedRate(
+            object : TimerTask() {
+                override fun run() {
+                    handler.post(update)
+                }
+            },
+            DELAY_MS,
+            PERIOD_MS
+        )
+    }
 
     private fun fetchSearchResults(name: String) {
         val itemsRef = db.collection("artist")
@@ -143,69 +131,34 @@ class HomeFragment : Fragment() {
                     val location = document.getString("artistlocation")
                     val workExperience = document.getString("artistworkex")
                     val profileImage = document.getString("artistprofile")
-                    val artistO = document.getString("artistO") ?: ""
-                    val artistT = document.getString("artistT") ?: ""
-                    val artistTh = document.getString("artistTh") ?: ""
-                    val artistFo = document.getString("artistFo") ?: ""
-                    val artistFi = document.getString("artistFi") ?: ""
-                    val artistS = document.getString("artistS") ?: ""
-                    val artistSe = document.getString("artistSe") ?: ""
-                    val artistE = document.getString("artistE") ?: ""
-                    val artistN = document.getString("artistN") ?: ""
 
-                    Log.d("HomeFragment", "Found artist: $artistName")
-
-
-                    val artistLayout = LinearLayout(requireContext())
-
-
-                    val layoutParams = LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.MATCH_PARENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT
-                    )
-                    artistLayout.layoutParams = layoutParams
-
-
-                    val profileImageView = ImageView(requireContext())
-                    val imageLayoutParams = LinearLayout.LayoutParams(
-                        50.dpToPx(requireContext()),
-                        50.dpToPx(requireContext())
-                    )
-                    profileImageView.layoutParams = imageLayoutParams
-                    profileImage?.let {
-                        Glide.with(requireContext())
-                            .load(it)
-                            .into(profileImageView)
+                    val artistLayout = LinearLayout(requireContext()).apply {
+                        layoutParams = LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.MATCH_PARENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT
+                        )
                     }
+
+                    val profileImageView = Glide.with(requireContext()).let {
+                        val imageView = ImageView(requireContext())
+                        it.load(profileImage).into(imageView)
+                        imageView
+                    }
+
                     artistLayout.addView(profileImageView)
 
                     val nameTextView = TextView(requireContext()).apply {
-                        text = " $artistName"
+                        text = artistName
                         textSize = 16f
                         setPadding(8, 8, 8, 8)
                     }
                     artistLayout.addView(nameTextView)
 
-
                     artistLayout.setOnClickListener {
-                        val intent = Intent(requireContext(), ArtistDetailActivity::class.java).apply {
-                            putExtra("ARTIST_NAME", artistName)
-                            putExtra("ARTIST_LOCATION", location)
-                            putExtra("ARTIST_WORK_EXPERIENCE", workExperience)
-                            putExtra("ARTIST_PROFILE_IMAGE", profileImage)
-                            putExtra("ARTIST_O", artistO)
-                            putExtra("ARTIST_T", artistT)
-                            putExtra("ARTIST_TH", artistTh)
-                            putExtra("ARTIST_FO", artistFo)
-                            putExtra("ARTIST_FI", artistFi)
-                            putExtra("ARTIST_S", artistS)
-                            putExtra("ARTIST_SE", artistSe)
-                            putExtra("ARTIST_E", artistE)
-                            putExtra("ARTIST_N", artistN)
-                        }
+                        val intent = Intent(requireContext(), ArtistDetailActivity::class.java)
+                        intent.putExtra("ARTIST_NAME", artistName)
                         startActivity(intent)
                     }
-
 
                     binding.resultsContainer.addView(artistLayout)
                 }
@@ -215,14 +168,8 @@ class HomeFragment : Fragment() {
         }
     }
 
-
-    private fun walkinbimgClick(view: View) {
-        val intent = Intent(requireActivity(), WalkInActivity::class.java)
-        startActivity(intent)
-    }
-
-    private fun homebimgClick(view: View) {
-        val intent = Intent(requireActivity(), HomeSerActivity::class.java)
+    private fun clickbtnClick(view: View) {
+        val intent = Intent(requireActivity(), HomeSerActivity::class.java) // Update with desired activity
         startActivity(intent)
     }
 
@@ -234,16 +181,5 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         timer.cancel()
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }

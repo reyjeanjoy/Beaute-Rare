@@ -6,6 +6,7 @@ import com.beauterare.rare.models.LoginRequest
 import com.beauterare.rare.models.LoginResponse
 import com.beauterare.rare.models.SignUpRequest
 import com.beauterare.rare.models.SignUpResponse
+import com.beauterare.rare.models.UserProfileResponse
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.Field
@@ -20,6 +21,9 @@ interface ApiService {
 
     @POST("login.php") // Endpoint for the login functionality
     fun login(@Body request: LoginRequest): Call<LoginResponse>
+
+    @GET("api/getCurrentUserEmail") // Adjust the endpoint path to match your backend
+    fun getCurrentUserEmail(): Call<UserProfileResponse>
 
     // Fetch all appointments
     @GET("get_appointments.php")

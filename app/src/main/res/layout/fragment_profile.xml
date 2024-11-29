@@ -17,22 +17,13 @@
             android:orientation="vertical"
             android:gravity="center_vertical">
 
-            <ImageButton
-                android:id="@+id/backButton"
-                android:layout_width="40dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="-10dp"
-                android:clickable="true"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/back"
-                android:background="@null" />
 
             <ImageButton
                 android:id="@+id/editbuttonn"
                 android:layout_width="20dp"
                 android:layout_height="25dp"
                 android:layout_marginStart="300dp"
-                android:layout_marginTop="-25dp"
+                android:layout_marginTop="10dp"
                 android:background="@null"
                 android:scaleType="fitStart"
                 android:src="@drawable/editpic" />
@@ -94,7 +85,7 @@
                 android:layout_marginTop="-60dp"
                 android:layout_marginStart="40dp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/Firstname"
                 android:layout_width="220dp"
                 android:layout_height="40dp"
@@ -115,7 +106,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="40dp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/Lastname"
                 android:layout_width="220dp"
                 android:layout_height="40dp"
@@ -129,43 +120,25 @@
                 android:gravity="center_vertical"
                 android:enabled="false" />
 
+
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="20dp"
-                android:text="Age"
-                android:layout_marginTop="10dp"
+                android:text="Email"
+                android:layout_marginTop="0dp"
                 android:layout_marginStart="40dp" />
 
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="280dp"
+                android:layout_marginLeft="330dp"
+                android:layout_marginTop="-80dp"
                 android:src="@drawable/img1" />
 
-            <EditText
-                android:id="@+id/Age"
-                android:layout_width="220dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/text_round"
-                android:text=" "
-                android:textColor="#4D4B4A"
-                android:textSize="20sp"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:layout_marginTop="-50dp"
-                android:gravity="center_vertical"
-                android:enabled="false" />
+
 
             <TextView
-                android:layout_width="80dp"
-                android:layout_height="20dp"
-                android:text="Birthdate"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="40dp" />
-
-            <EditText
-                android:id="@+id/Birthdate"
+                android:id="@+id/Email"
                 android:layout_width="220dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
@@ -175,6 +148,7 @@
                 android:textSize="20sp"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
+                android:layout_marginTop="30dp"
                 android:gravity="center_vertical"
                 android:enabled="false" />
 
@@ -185,36 +159,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginStart="40dp" />
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/img" />
-
-            <EditText
-                android:id="@+id/Address"
-                android:layout_width="220dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/text_round"
-                android:text=" "
-                android:textColor="#4D4B4A"
-                android:textSize="20sp"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:layout_marginTop="-40dp"
-                android:gravity="center_vertical"
-                android:enabled="false" />
-
             <TextView
-                android:layout_width="80dp"
-                android:layout_height="20dp"
-                android:text="Email"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="40dp" />
-
-            <EditText
-                android:id="@+id/Email"
+                android:id="@+id/Address"
                 android:layout_width="220dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_horizontal"
@@ -227,79 +173,13 @@
                 android:paddingEnd="10dp"
                 android:gravity="center_vertical"
                 android:enabled="false" />
-
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="20dp"
-                android:text="Phone Number"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="40dp" />
-
-            <EditText
-                android:id="@+id/Phone"
-                android:layout_width="220dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/text_round"
-                android:text=" "
-                android:inputType="phone"
-                android:textColor="#4D4B4A"
-                android:textSize="20sp"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:gravity="center_vertical"
-                android:enabled="false" />
-
-            <TextView
-                android:layout_width="100dp"
-                android:layout_height="20dp"
-                android:text="ID Type"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="40dp" />
-
-            <EditText
-                android:id="@+id/IdType"
-                android:layout_width="220dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/text_round"
-                android:text=" "
-                android:textColor="#4D4B4A"
-                android:textSize="20sp"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:gravity="center_vertical"
-                android:enabled="false" />
-
-            <TextView
-                android:layout_width="80dp"
-                android:layout_height="20dp"
-                android:text="ID Number"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="40dp" />
-
-            <EditText
-                android:id="@+id/IdNum"
-                android:layout_width="220dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/text_round"
-                android:text=" "
-                android:textColor="#4D4B4A"
-                android:textSize="20sp"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:gravity="center_vertical"
-                android:enabled="false" />
-
-
-
+            
             <Button
                 android:id="@+id/buttonsave"
                 android:layout_width="110dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="40dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="20dp"
                 android:backgroundTint="#e75480"
                 android:text="Save"
                 android:textColor="@color/white"
@@ -325,7 +205,7 @@
                 android:text="LOG OUT"
                 android:textSize="15sp"
                 android:layout_marginLeft="85dp"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="20dp"
                 android:letterSpacing="0.2"
                 android:textStyle="bold"
                 android:background="@drawable/button" />
@@ -334,12 +214,11 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="280dp"
-                android:layout_marginTop="-240dp"
+                android:layout_marginTop="-140dp"
                 android:src="@drawable/img1" />
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="30dp"
                 android:layout_marginTop="0dp"
                 android:src="@drawable/img" />
         </LinearLayout>

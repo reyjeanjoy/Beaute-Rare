@@ -1,6 +1,8 @@
 package com.beauterare.rare
 
 import com.beauterare.rare.api.ApiService
+import com.beauterare.rare.models.Appointment
+import com.beauterare.rare.api.AppointmentApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -19,4 +21,9 @@ object RetrofitInstance {
     val apiService: ApiService by lazy {
         retrofit.create(ApiService::class.java)
     }
+
+    val appointmentApi: AppointmentApi by lazy {
+        retrofit.create(AppointmentApi ::class.java)
+    }
+
 }

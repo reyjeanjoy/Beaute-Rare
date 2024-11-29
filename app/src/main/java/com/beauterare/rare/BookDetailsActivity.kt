@@ -4,7 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -20,16 +24,17 @@ class BookDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_details)
 
-        // Initialize values from intent
+        // Initialize data from intent
         initDataFromIntent()
 
-        // Set the TextViews
+        // Set up the text views
         setUpTextViews()
 
-        // Set up the proceed payment button
-        setUpProceedPaymentButton()
+        // Set up the Proceed to Confirmation button
+        setUpProceedToConfirmationButton()
     }
 
+    // Initialize data passed through the intent
     private fun initDataFromIntent() {
         customerName = intent.getStringExtra("customerName") ?: "N/A"
         makeupArtist = intent.getStringExtra("makeupArtist") ?: "N/A"
@@ -38,6 +43,7 @@ class BookDetailsActivity : AppCompatActivity() {
         appointmentDate = intent.getStringExtra("appointmentDate") ?: "N/A"
     }
 
+    // Set up the text views to display the appointment details
     private fun setUpTextViews() {
         val formattedTime = formatTimeToAmPm(appointmentTime)
 
@@ -48,27 +54,62 @@ class BookDetailsActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.appointment_date).text = "Appointment Date: $appointmentDate"
     }
 
-    private fun setUpProceedPaymentButton() {
-        findViewById<Button>(R.id.proceedPaymentBtn).setOnClickListener {
-            val intent = Intent(this, ConfirmationActivity::class.java).apply {
-                putExtra("customerName", customerName)
-                putExtra("makeupArtist", makeupArtist)
-                putExtra("makeupName", makeupName)
-                putExtra("appointmentTime", appointmentTime)
-                putExtra("appointmentDate", appointmentDate)
-            }
-            startActivity(intent)
+    // Set up the button to proceed to the confirmation screen
+    private fun setUpProceedToConfirmationButton() {
+        val proceedButton: Button = findViewById(R.id.proceedBtn) // Make sure the ID matches in your layout
+        proceedButton.setOnClickListener {
+            // Call the addAppointment function when the button is clicked
+            addAppointment()
         }
     }
 
+    // Function to add an appointment (makes a network call)
+    private fun addAppointment() {
+        // Call API to create an appointment
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                // Call the API method to create an appointment
+                val response = RetrofitInstance.appointmentApi.createAppointment(
+                    customerName,
+                    makeupName,
+                    makeupArtist,
+                    appointmentTime,
+                    appointmentDate
+                )
+
+                if (response.isSuccessful) {
+                    val responseMessage = response.body()
+                    runOnUiThread {
+                        // Show success message and navigate to the appointment confirmation screen
+                        Toast.makeText(this@BookDetailsActivity, "Appointment Added!", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(this@BookDetailsActivity, ConfirmationActivity::class.java))
+                    }
+                } else {
+                    runOnUiThread {
+
+                        Toast.makeText(this@BookDetailsActivity, "Failed to add appointment", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } catch (e: Exception) {
+                runOnUiThread {
+
+                    Toast.makeText(this@BookDetailsActivity, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
+    // Function to format the time from 24-hour to 12-hour AM/PM format
     private fun formatTimeToAmPm(time: String): String {
+        val sdf = SimpleDateFormat("HH:mm", Locale.getDefault()) // Input format (24-hour format)
+        val output = SimpleDateFormat("hh:mm a", Locale.getDefault()) // Output format (12-hour format with AM/PM)
+
         return try {
-            val format = SimpleDateFormat("HH:mm", Locale.getDefault())
-            val date = format.parse(time)
-            val amPmFormat = SimpleDateFormat("hh:mm a", Locale.getDefault())
-            amPmFormat.format(date)
+            val date = sdf.parse(time)
+            output.format(date ?: Date()) // Return formatted time, defaulting to the current date if parsing fails
         } catch (e: Exception) {
-            time // return original if parsing fails
+            e.printStackTrace()
+            time // Return the original string if parsing fails
         }
     }
 }

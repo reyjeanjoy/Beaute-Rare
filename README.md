@@ -8,6 +8,9 @@ Beauté Rare is an innovative mobile makeup booking app designed to transform th
 - [Joseph Manuel Bagcat](https://github.com/Jospehus22)
 - [Matthew Daniel Pareja](https://github.com/MattHyo2002)
 
+# PHP Repository
+[PHP REPO](https://github.com/MattHyo2002/PHP_GroupJM.RAR_FRI1030-130.git)
+
 # Project Documentation
 
 ## Testcases Documentation
@@ -24,5 +27,6 @@ Beauté Rare is an innovative mobile makeup booking app designed to transform th
 ![Retrofit](https://img.shields.io/badge/Retrofit-green?logo=retrofit&logoColor=white)
 
 ## Databases
-![MySQL](https://img.shields.io/badge/MySQL-blue?logo=mysql&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-blue?logo=sqlite&logoColor=white)
+
 

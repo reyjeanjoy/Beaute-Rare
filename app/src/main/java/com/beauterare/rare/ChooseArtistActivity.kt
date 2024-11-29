@@ -11,6 +11,7 @@ class ChooseArtistActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.choose_list_item)
 
+        // List of buttons to view portfolios and their corresponding target activities
         val portfolioButtons = listOf(
             R.id.buttonViewPortfolio1 to BretProfActivity::class.java,
             R.id.buttonViewPortfolio2 to AngeProfActivity::class.java,
@@ -20,6 +21,25 @@ class ChooseArtistActivity : AppCompatActivity() {
             R.id.buttonViewPortfolio6 to AntProfActivity::class.java
         )
 
+        // List of artist names
+        val artistNames = listOf(
+            "Bretman Rock",
+            "Angeline Dela Cruz",
+            "Paul Unating",
+            "Janica Cleto",
+            "Jelly Eugenio",
+            "Anthea Bueno"
+        )
+
+        // Set up the click listener for each "View Portfolio" button
+        portfolioButtons.forEach { (buttonId, targetActivity) ->
+            findViewById<Button>(buttonId).setOnClickListener {
+                val intent = Intent(this, targetActivity) // Navigate to the respective artist's portfolio
+                startActivity(intent)
+            }
+        }
+
+        // Set up the click listener for each "Book" button
         val bookingButtons = listOf(
             R.id.buttonBook1,
             R.id.buttonBook2,
@@ -29,15 +49,13 @@ class ChooseArtistActivity : AppCompatActivity() {
             R.id.buttonBook6
         )
 
-        portfolioButtons.forEach { (buttonId, activityClass) ->
+        bookingButtons.forEachIndexed { index, buttonId ->
             findViewById<Button>(buttonId).setOnClickListener {
-                startActivity(Intent(this, activityClass))
-            }
-        }
-
-        bookingButtons.forEach { buttonId ->
-            findViewById<Button>(buttonId).setOnClickListener {
-                startActivity(Intent(this, PaymentActivity::class.java))
+                val artistName = artistNames[index] // Get the full name of the artist
+                val intent = Intent(this, FormActivity::class.java).apply {
+                    putExtra("makeupArtist", artistName)
+                }
+                startActivity(intent)
             }
         }
     }

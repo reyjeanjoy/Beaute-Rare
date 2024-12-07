@@ -6,39 +6,61 @@
     android:background="#FFC3D9"
     android:orientation="vertical">
 
+    <!-- Header -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:gravity="end"
+        android:gravity="center"
         android:padding="8dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chats"
-            android:textSize="40sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_marginStart="20dp"
-            android:textColor="@color/black"/>
-
+            android:textColor="@color/black" />
     </LinearLayout>
 
-    <androidx.core.widget.NestedScrollView
+    <!-- Message List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:background="@color/white" />
+
+    <!-- Message Input and Send Button -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1">
+        android:orientation="horizontal"
+        android:padding="8dp">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
+        <EditText
+            android:id="@+id/messageInput"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:background="@drawable/chats_bground" />
+            android:layout_weight="1"
+            android:hint="Type a message"
+            android:background="@android:drawable/edit_text"
+            android:padding="10dp"
+            android:textSize="16sp" />
 
-    </androidx.core.widget.NestedScrollView>
+        <ImageButton
+            android:id="@+id/sendButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_send"
+            android:contentDescription="Send"
+            android:background="?attr/selectableItemBackground"
+            android:padding="8dp" />
+    </LinearLayout>
 </LinearLayout>

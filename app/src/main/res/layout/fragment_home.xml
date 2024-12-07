@@ -98,7 +98,7 @@
                     android:letterSpacing=".1"
                     android:layout_marginTop="-5dp"
                     android:clickable="true"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:layout_gravity="center"
                     android:paddingTop="13dp"
                     android:paddingStart="15dp"

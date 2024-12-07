@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         replaceFragment(HomeFragment())
 
-        binding.buttomNavView.setOnItemSelectedListener{
+        binding.bottomNavView.setOnItemSelectedListener{
 
             when(it.itemId){
                 R.id.message -> startActivity(Intent(this, MessageActivity::class.java))

@@ -9,7 +9,7 @@ object RetrofitClient {
     fun getClient(baseUrl: String): Retrofit {
         if (retrofit == null) {
             retrofit = Retrofit.Builder()
-                .baseUrl("https://http://192.168.1.9/") // Base URL of your API
+                .baseUrl(baseUrl) // Correct base URL of your API
                 .addConverterFactory(GsonConverterFactory.create()) // Convert JSON to Kotlin objects
                 .build()
         }

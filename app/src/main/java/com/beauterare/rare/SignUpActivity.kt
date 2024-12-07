@@ -22,12 +22,13 @@ class SignUpActivity : AppCompatActivity() {
     private lateinit var signupAddress: EditText
     private lateinit var signUpButton: Button
     private lateinit var loginTextView: TextView
-    private lateinit var databaseHelper: DatabaseHelper
+    private lateinit var databaseHelper: DatabaseHelper // DatabaseHelper instance
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
 
+        // Initialize views
         signupEmail = findViewById(R.id.Email)
         signupPassword = findViewById(R.id.Password)
         signupFname = findViewById(R.id.FirstName)
@@ -36,6 +37,7 @@ class SignUpActivity : AppCompatActivity() {
         signUpButton = findViewById(R.id.SignUpButton)
         loginTextView = findViewById(R.id.LoginTextView)
 
+        // Initialize DatabaseHelper
         databaseHelper = DatabaseHelper(this)
 
         signUpButton.setOnClickListener {
@@ -51,41 +53,34 @@ class SignUpActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Check if email already exists in SQLite
+            // Check if the email already exists in SQLite
             if (databaseHelper.isEmailExists(email)) {
                 Toast.makeText(this, "Email already exists. Please use a different email.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Prepare data for API request
-            val signUpRequest = SignUpRequest(fname, lname, email, password, address)
+            // Insert user into SQLite database
+            val name = "$fname $lname"
+            val isInserted = databaseHelper.insertUser(email, password, name, address)
 
-            // Call the backend API
-            RetrofitInstance.apiService.signUp(signUpRequest).enqueue(object : Callback<SignUpResponse> {
-                override fun onResponse(call: Call<SignUpResponse>, response: Response<SignUpResponse>) {
-                    if (response.isSuccessful && response.body()?.success == true) {
-                        // Insert into SQLite after successful backend validation
-                        val isInserted = databaseHelper.insertUser(email, password, "$fname $lname", address)
-                        if (isInserted) {
-                            Toast.makeText(this@SignUpActivity, "SignUp Successful!", Toast.LENGTH_SHORT).show()
-                            startActivity(Intent(this@SignUpActivity, LogInActivity::class.java))
-                            finish()
-                        } else {
-                            Toast.makeText(this@SignUpActivity, "Error saving data locally.", Toast.LENGTH_SHORT).show()
-                        }
-                    } else {
-                        Toast.makeText(this@SignUpActivity, response.body()?.message ?: "Signup Failed", Toast.LENGTH_SHORT).show()
-                    }
-                }
+            if (isInserted) {
+                // Save the user's email in SharedPreferences for future use
+                val sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE)
+                val editor = sharedPreferences.edit()
+                editor.putString("userEmail", email) // Save the user's email
+                editor.apply()
 
-                override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
-                    Toast.makeText(this@SignUpActivity, "Network Error: ${t.message}", Toast.LENGTH_SHORT).show()
-                }
-            })
+                Toast.makeText(this, "Sign-up successful! Welcome, $name", Toast.LENGTH_SHORT).show()
+
+                // Navigate to login or another activity
+                startActivity(Intent(this, LogInActivity::class.java))
+                finish()
+            }
+
         }
 
         loginTextView.setOnClickListener {
-            startActivity(Intent(this@SignUpActivity, LogInActivity::class.java))
+            startActivity(Intent(this, LogInActivity::class.java))
         }
     }
 }

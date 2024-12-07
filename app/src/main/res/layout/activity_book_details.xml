@@ -1,54 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="350dp"
-    android:layout_height="400dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@drawable/pink_background"
     android:padding="16dp"
     android:layout_gravity="center">
 
+    <!-- Title -->
     <TextView
-        android:id="@+id/customer_name"
+        android:id="@+id/details_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Appointment Details"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#FF0080"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Customer Name -->
+    <TextView
+        android:id="@+id/customer_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Customer Name:"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/customer_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:layout_marginTop="50dp"/>
+        android:textColor="#333"
+        android:background="@drawable/text_field_background"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Makeup Name -->
+    <TextView
+        android:id="@+id/makeup_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Makeup Name:"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_marginBottom="4dp" />
 
     <TextView
         android:id="@+id/makeup_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:layout_marginTop="20dp"/>
+        android:textColor="#333"
+        android:background="@drawable/text_field_background"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Makeup Details -->
+    <TextView
+        android:id="@+id/makeup_details_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Makeup Details:"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_marginBottom="4dp" />
 
     <TextView
         android:id="@+id/makeup_details"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:layout_marginTop="20dp" />
+        android:textColor="#333"
+        android:background="@drawable/text_field_background"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Appointment Time -->
+    <TextView
+        android:id="@+id/appointment_time_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appointment Time:"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_marginBottom="4dp" />
 
     <TextView
         android:id="@+id/appointment_time"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:layout_marginTop="20dp" />
+        android:textColor="#333"
+        android:background="@drawable/text_field_background"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Appointment Date -->
+    <TextView
+        android:id="@+id/appointment_date_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Appointment Date:"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_marginBottom="4dp" />
 
     <TextView
         android:id="@+id/appointment_date"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18sp"
-        android:layout_marginTop="20dp" />
+        android:textColor="#333"
+        android:background="@drawable/text_field_background"
+        android:padding="8dp"
+        android:layout_marginBottom="24dp" />
 
+    <!-- Proceed Button -->
     <Button
         android:id="@+id/proceedBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
+        android:layout_gravity="center_horizontal"
         android:text="Next"
         android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:backgroundTint="#FFBCD9"/>
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FFBCD9"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="12dp" />
 </LinearLayout>

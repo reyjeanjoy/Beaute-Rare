@@ -1,5 +1,6 @@
 package com.beauterare.rare
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -25,12 +26,14 @@ class LogInActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_log_in)
 
+        // Initialize views
         loginEmail = findViewById(R.id.SEmail)
         loginPassword = findViewById(R.id.SPass)
         loginButton = findViewById(R.id.button2)
         signupTextView = findViewById(R.id.SignUptextView)
         databaseHelper = DatabaseHelper(this)
 
+        // Login button click listener
         loginButton.setOnClickListener {
             val email = loginEmail.text.toString().trim()
             val password = loginPassword.text.toString().trim()
@@ -50,6 +53,10 @@ class LogInActivity : AppCompatActivity() {
                     if (response.isSuccessful && response.body()?.success == true) {
                         // Validate locally using SQLite
                         if (databaseHelper.validateUser(email, password)) {
+                            // Save user session in SharedPreferences
+                            saveUserSession(email)
+
+                            // Show success message and navigate to MainActivity
                             Toast.makeText(this@LogInActivity, "Login Successful", Toast.LENGTH_SHORT).show()
                             startActivity(Intent(this@LogInActivity, MainActivity::class.java))
                             finish()
@@ -67,8 +74,20 @@ class LogInActivity : AppCompatActivity() {
             })
         }
 
+        // Sign-up text click listener
         signupTextView.setOnClickListener {
             startActivity(Intent(this@LogInActivity, SignUpActivity::class.java))
         }
+    }
+
+    // Save user session
+    private fun saveUserSession(email: String) {
+        val sharedPreferences = getSharedPreferences("UserSession", Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putString("userEmail", email) // Save the logged-in user's email
+        editor.apply()
+
+        // Debug log to confirm session saving
+        Toast.makeText(this, "Session Saved for $email", Toast.LENGTH_SHORT).show()
     }
 }

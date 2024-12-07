@@ -8,3 +8,4 @@ data class Appointment(
     val appointmentTime: String,
     val appointmentDate: String
 )
+

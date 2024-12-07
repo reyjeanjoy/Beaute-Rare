@@ -65,37 +65,21 @@ class BookDetailsActivity : AppCompatActivity() {
 
     // Function to add an appointment (makes a network call)
     private fun addAppointment() {
-        // Call API to create an appointment
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                // Call the API method to create an appointment
-                val response = RetrofitInstance.appointmentApi.createAppointment(
-                    customerName,
-                    makeupName,
-                    makeupArtist,
-                    appointmentTime,
-                    appointmentDate
-                )
+        val databaseHelper = DatabaseHelper(this)
 
-                if (response.isSuccessful) {
-                    val responseMessage = response.body()
-                    runOnUiThread {
-                        // Show success message and navigate to the appointment confirmation screen
-                        Toast.makeText(this@BookDetailsActivity, "Appointment Added!", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(this@BookDetailsActivity, ConfirmationActivity::class.java))
-                    }
-                } else {
-                    runOnUiThread {
+        val success = databaseHelper.insertAppointment(
+            customerName,
+            makeupName,
+            makeupArtist,
+            appointmentTime,
+            appointmentDate
+        )
 
-                        Toast.makeText(this@BookDetailsActivity, "Failed to add appointment", Toast.LENGTH_SHORT).show()
-                    }
-                }
-            } catch (e: Exception) {
-                runOnUiThread {
-
-                    Toast.makeText(this@BookDetailsActivity, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
-                }
-            }
+        if (success) {
+            Toast.makeText(this, "Appointment Added!", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, ConfirmationActivity::class.java))
+        } else {
+            Toast.makeText(this, "Failed to add appointment!", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -113,3 +97,4 @@ class BookDetailsActivity : AppCompatActivity() {
         }
     }
 }
+

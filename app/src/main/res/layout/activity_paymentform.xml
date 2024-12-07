@@ -1,13 +1,27 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".FormActivity">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:padding="16dp">
+
+        <!-- Form Title -->
+        <TextView
+            android:id="@+id/form_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Book Appointment"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#FF0080"
+            android:layout_marginBottom="12dp" />
 
         <!-- Customer Name -->
         <TextView
@@ -15,115 +29,100 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Customer Name"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/customer_name_input"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/customer_name_label"
-            android:layout_marginTop="8dp"
             android:inputType="text"
             android:background="@drawable/small_container"
-            android:padding="8dp"
-            android:drawablePadding="8dp"
-            android:imeOptions="actionNext"
-            android:layout_centerInParent="true"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            android:padding="12dp"
+            android:hint="Enter customer name"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
 
         <!-- Makeup Name -->
         <TextView
             android:id="@+id/makeup_name_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/customer_name_input"
-            android:layout_marginTop="16dp"
             android:text="Makeup Name"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp" />
 
         <EditText
             android:id="@+id/makeup_name_input"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/makeup_name_label"
             android:background="@drawable/small_container"
-            android:layout_marginTop="8dp"
             android:inputType="text"
-            android:padding="8dp"
-            android:drawablePadding="8dp"
-            android:imeOptions="actionNext"
-            android:layout_centerInParent="true"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            android:padding="12dp"
+            android:hint="Enter makeup name"
+            android:textSize="16sp"
+            android:layout_marginBottom="16dp" />
 
-        <!-- Makeup Artist (Uneditable) -->
+        <!-- Makeup Artist -->
         <TextView
             android:id="@+id/makeup_artist_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/makeup_name_input"
-            android:layout_marginTop="16dp"
             android:text="Makeup Artist"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp" />
 
         <TextView
             android:id="@+id/makeup_artist_input"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/makeup_artist_label"
-            android:layout_marginTop="8dp"
-            android:text=""
             android:background="@drawable/small_container"
-            android:padding="8dp"
-            android:drawablePadding="8dp"
-            android:clickable="false"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:hint="Uneditable"
             android:focusable="false"
-            android:layout_centerInParent="true"
-            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+            android:clickable="false"
+            android:layout_marginBottom="16dp" />
 
         <!-- Appointment Time -->
         <TextView
             android:id="@+id/appointment_time_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/makeup_name_input"
-            android:layout_marginTop="100dp"
             android:text="Appointment Time"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp" />
 
         <TimePicker
             android:id="@+id/appointment_time_picker"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/appointment_time_label"
-            android:layout_marginTop="8dp" />
+            android:layout_marginBottom="16dp" />
 
         <!-- Appointment Date -->
         <TextView
             android:id="@+id/appointment_date_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/appointment_time_picker"
-            android:layout_marginTop="16dp"
             android:text="Appointment Date"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp" />
 
         <CalendarView
             android:id="@+id/appointment_calendar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/appointment_date_label"
-            android:layout_marginTop="8dp" />
+            android:layout_marginBottom="24dp" />
 
         <!-- Submit Button -->
         <Button
             android:id="@+id/submit_button"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/appointment_calendar"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="32dp"
+            android:backgroundTint="#FFBCD9"
+            android:paddingVertical="12dp"
             android:text="Submit"
-            android:backgroundTint="#FFBCD9"/>
-
-    </RelativeLayout>
+            android:textStyle="bold"
+            android:textSize="16sp" />
+    </LinearLayout>
 </ScrollView>

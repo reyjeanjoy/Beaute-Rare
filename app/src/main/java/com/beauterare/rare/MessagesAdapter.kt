@@ -15,7 +15,7 @@ class MessagesAdapter(private val messages: List<Message>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.message_item, parent, false)
+            .inflate(R.layout.custom_item_layout, parent, false)
         return MessageViewHolder(itemView)
     }
 

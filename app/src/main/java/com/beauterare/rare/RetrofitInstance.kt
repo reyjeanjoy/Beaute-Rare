@@ -7,7 +7,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
-    private const val BASE_URL = "http://192.168.42.134:8000/" // Replace with your PHP server URL
+    private const val BASE_URL = "http://192.168.1.8:8000/" // Replace with your PHP server URL
 
     // Retrofit instance
     private val retrofit by lazy {
